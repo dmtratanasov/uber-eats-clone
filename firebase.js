@@ -16,4 +16,4 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 // Use these for db
 const db = firebaseApp.firestore();
 
-export { db };
+export { db, firebase };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
-import firebase from "../../firebase";
+import { db, firebase } from "../../firebase";
 import LottieView from "lottie-react-native";
 
 export default function ViewCart({ navigation }) {
@@ -24,7 +24,6 @@ export default function ViewCart({ navigation }) {
 
   const addOrderToFireBase = () => {
     setLoading(true);
-    const db = firebase.firestore();
     db.collection("orders")
       .add({
         items: items,
