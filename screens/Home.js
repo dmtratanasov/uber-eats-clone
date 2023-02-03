@@ -1,10 +1,12 @@
 import { View, Text, ScrollView } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import HeaderTabs from '../components/HeaderTabs'
+import HeaderTabs from '../components/home/HeaderTabs'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import SearchBar from '../components/SearchBar'
-import Categories from '../components/Categories'
-import RestaurantItems, { localRestaurants } from '../components/RestaurantItems'
+import SearchBar from '../components/home/SearchBar'
+import Categories from '../components/home/Categories'
+import RestaurantItems, { localRestaurants } from '../components/home/RestaurantItems'
+import { Divider } from 'react-native-elements'
+import BottomTabs from '../components/home/BottomTabs'
 
 
 const YELP_API_KEY = "GfRYXxUDVRfRLcvGgV6MM16zyN7uSkI2BtimLrbQPedk_jdhvF9E_Cp5_YDns3ZJmqqjKAHWOdvW5gcuA1eURTX0dKLu9NHpw6Ke1eWYmmeliGeqks60P0WQjWfRY3Yx";
@@ -47,6 +49,8 @@ export default function Home() {
         <Categories />
         <RestaurantItems restaurantsData={restaurantsData} />
       </ScrollView>
+      <Divider width={1}/>
+      <BottomTabs/>
     </SafeAreaView>
   )
 };
